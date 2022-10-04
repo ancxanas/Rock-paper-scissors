@@ -37,7 +37,13 @@ function playRound(playerSelection,computerSelection){
         return('Type Correctly');
     }
 }
-//Player & Computer Choice
-const playerSelection = prompt('Choice?');
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection,computerSelection));
+
+//game
+function game(){
+    for (let i = 0; i < 5; i++){
+        const playerSelection = prompt('what\'s your choice');
+        const computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection,computerSelection));
+    }
+}
+game();
