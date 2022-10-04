@@ -6,6 +6,8 @@ function getComputerChoice(){
 }
 //Single round of Rock paper Scissors
 function playRound(playerSelection,computerSelection){
+    playerSelection = capitalize(playerSelection);
+    computerSelection = capitalize(computerSelection);
     if (playerSelection === computerSelection){
         console.log('It\'s a Tie');
     }
@@ -33,4 +35,7 @@ function playRound(playerSelection,computerSelection){
             console.log(`You Win! ${playerSelection} beats ${computerSelection}`)
         }
     }
+}
+function capitalize(string){
+    return string.charAt(0).toUpperCase()+string.slice(1).toLowerCase();
 }
