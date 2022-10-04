@@ -7,35 +7,43 @@ function getComputerChoice(){
 //Single round of Rock paper Scissors
 function playRound(playerSelection,computerSelection){
     playerSelection = capitalize(playerSelection);
-    computerSelection = capitalize(computerSelection);
     if (playerSelection === computerSelection){
         console.log('It\'s a Tie');
     }
     else if (playerSelection === 'Rock'){
         if (computerSelection === 'Paper'){
-            console.log(`You Lose! ${computerSelection} beats ${playerSelection}`)
+            return(`You Lose! ${computerSelection} beats ${playerSelection}`)
         }
         else{
-            console.log(`You Win! ${playerSelection} beats ${computerSelection}`)
+            return(`You Win! ${playerSelection} beats ${computerSelection}`)
         }
     }
     else if (playerSelection === 'Scissors'){
         if (computerSelection === 'Rock'){
-            console.log(`You Lose! ${computerSelection} beats ${playerSelection}`)
+            return(`You Lose! ${computerSelection} beats ${playerSelection}`)
         }
         else{
-            console.log(`You Win! ${playerSelection} beats ${computerSelection}`)
+            return(`You Win! ${playerSelection} beats ${computerSelection}`)
         }
     }
     else if (playerSelection === 'Paper'){
         if (computerSelection === 'Scissors'){
-            console.log(`You Lose! ${computerSelection} beats ${playerSelection}`)
+            return(`You Lose! ${computerSelection} beats ${playerSelection}`)
         }
         else{
-            console.log(`You Win! ${playerSelection} beats ${computerSelection}`)
+            return(`You Win! ${playerSelection} beats ${computerSelection}`)
         }
     }
+    else{
+        return('Type Correctly');
+    }
 }
+//Player & Computer Choice
+const playerSelection = prompt('Choice?');
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection,computerSelection));
+
+//capitalize
 function capitalize(string){
     return string.charAt(0).toUpperCase()+string.slice(1).toLowerCase();
 }
