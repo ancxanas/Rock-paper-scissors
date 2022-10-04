@@ -6,11 +6,10 @@ function getComputerChoice(){
 }
 //Single round of Rock paper Scissors
 function playRound(playerSelection,computerSelection){
-    playerSelection = capitalize(playerSelection);
     if (playerSelection === computerSelection){
         console.log('It\'s a Tie');
     }
-    else if (playerSelection === 'Rock'){
+    else if (playerSelection.toLowerCase() === 'rock'){
         if (computerSelection === 'Paper'){
             return(`You Lose! ${computerSelection} beats ${playerSelection}`)
         }
@@ -18,7 +17,7 @@ function playRound(playerSelection,computerSelection){
             return(`You Win! ${playerSelection} beats ${computerSelection}`)
         }
     }
-    else if (playerSelection === 'Scissors'){
+    else if (playerSelection.toLowerCase() === 'scissors'){
         if (computerSelection === 'Rock'){
             return(`You Lose! ${computerSelection} beats ${playerSelection}`)
         }
@@ -26,7 +25,7 @@ function playRound(playerSelection,computerSelection){
             return(`You Win! ${playerSelection} beats ${computerSelection}`)
         }
     }
-    else if (playerSelection === 'Paper'){
+    else if (playerSelection.toLowerCase() === 'paper'){
         if (computerSelection === 'Scissors'){
             return(`You Lose! ${computerSelection} beats ${playerSelection}`)
         }
@@ -42,8 +41,3 @@ function playRound(playerSelection,computerSelection){
 const playerSelection = prompt('Choice?');
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection,computerSelection));
-
-//capitalize
-function capitalize(string){
-    return string.charAt(0).toUpperCase()+string.slice(1).toLowerCase();
-}
