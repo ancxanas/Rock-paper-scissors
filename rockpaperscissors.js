@@ -64,6 +64,12 @@ function game(){
         console.log(playRound(playerSelection,computerSelection));
         console.log(`Computer ${computerScore} : Player ${playerScore}`)
         }
+        if(playerScore > computerScore){
+            console.log('Player Wins the Round')
+        } 
+        else{
+            console.log('Computer Wins the Round')
+        }
 }
 
 
